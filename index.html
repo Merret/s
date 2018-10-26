@@ -3,9 +3,22 @@
 <title>Merret Short URL</title>
 <meta property="og:image" content="https://merret.github.io/s/link-500.png"/>
 </head>
-<body>
-<p id="p">Redirecting</p>
-<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/xhr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/urldata.min.js"></script>
+<body onload="">
+    <p id="p">Redirecting</p>
+    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/xhr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/urldata.min.js"></script>
+    <script>
+        var x = document.getElementById("p");
+        var l = location.href;
+        if(urldata("t")==-1) {x.innerHTML+=" to console page.";l="./console";}
+        else {
+            var b = xhr.get("https://api.myjson.com/bins/"+urldata("t"));
+            if(b=="xhr.GET Error. statue: 404") {x.innerHTML+=" to console page.";l="./console";}
+            else {
+                x.innerHTML+=" to "+b[0];
+                l=b[0];
+            }
+        }
+    </script>
 </body>
 </html>
