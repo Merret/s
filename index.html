@@ -6,12 +6,13 @@
 <body onload="">
     <p id="p">Redirecting</p>
     <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/xhr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4.2/js/urldata.min.js"></script>
     <script>
+        var u = location.href;
+        u = u.substr(u.search("\\?")+1);
         var x = document.getElementById("p");
-        if(urldata("t")==-1) {x.innerHTML+=" to console page.";location.href="./console";}
+        if(u==location.href) {x.innerHTML+=" to console page.";location.href="./console";}
         else {
-            var b = xhr.get("https://api.myjson.com/bins/"+urldata("t"));
+            var b = xhr.get("https://api.myjson.com/bins/"+u);
             if(b=="xhr.GET Error. statue: 404") {x.innerHTML+=" to console page.";location.href="./console";}
             else {
                 b = JSON.parse(b);
