@@ -14,19 +14,20 @@
 
 <script>
 function shorten() {
+    var x = JSON.parse(xhr.post("https://api.myjson.com/bins", '["'+document.getElementById("url").value+'"]'));
+    prompt("Your short URL is:", "s-url.tk/?"+x.uri.substring(28));
     
 }
 function v() {
-        var url = document.getElementById("url").value;
-        var pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-        if (pattern.test(url)) {
-            shorten();
-            return true;
-        } 
-            alert("Url is not valid!");
-            return false;
- 
-    }
+    var url = document.getElementById("url").value;
+    var pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+    if (pattern.test(url)) {
+        shorten();
+        return true;
+    } 
+        alert("This URL is not valid!\nDon't forget to add 'http://' or 'https://' behind the URL.");
+        return false;
+}
 </script>
 </body>
 </html>
