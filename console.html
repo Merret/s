@@ -2,11 +2,31 @@
 <head>
 <title>Merret Short URL</title>
 <meta property="og:image" content="https://merret.github.io/s/link-500.png"/>
+<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/xhr.min.js"></script>
 </head>
-<body onload="">
-    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/xhr.min.js"></script>
-    <script>
-        
-    </script>
+<body style="text-align:center">
+
+<h2>S-URL.TK URL Shortener</h2>
+
+<input type="url" id="url" style="width:70%" placeholder="type URL here"></input>
+
+<button style="max-width:30%" onclick="v()">Shorten it!</button>
+
+<script>
+function shorten() {
+    
+}
+function v() {
+        var url = document.getElementById("url").value;
+        var pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+        if (pattern.test(url)) {
+            shorten();
+            return true;
+        } 
+            alert("Url is not valid!");
+            return false;
+ 
+    }
+</script>
 </body>
 </html>
