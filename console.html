@@ -8,12 +8,16 @@
 </head>
 <body style="text-align:center; font-family: Arial, Helvetica, sans-serif;background-color:#f1f1f1;">
 
+<div style="position: relative; top: 20%;">
+
 <h2>GO-TO.ML URL Shortener</h2>
 
 <input type="url" id="url" style="min-width:80%; max-width:90%; padding: 4px; border: 0; font-size: 24px; border-radius: 8px" placeholder="type URL here">
 
 <button style="max-width:50%; font-size: 24px; border:none; color:#fff; background-color:#2196F3; padding: 4px; border-radius: 8px" onclick="v()">Shorten it!</button>
     
+</div>
+
 <script>
 function shorten() {
     var x = JSON.parse(xhr.post("https://api.myjson.com/bins", '["'+document.getElementById("url").value+'"]'));
