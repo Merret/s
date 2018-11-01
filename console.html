@@ -23,6 +23,10 @@
 
 <script>
 function shorten() {
+    if (!navigator.onLine) {
+        alert("No Internet Connection. :(");
+        return;
+    }
     var x = JSON.parse(xhr.post("https://api.myjson.com/bins", '["'+document.getElementById("url").value+'"]'));
     prompt("Your short URL is:", "go-to.ml/?"+x.uri.substring(28));
     document.getElementById("url").value = "";
