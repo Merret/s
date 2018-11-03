@@ -1,6 +1,6 @@
 # Merret Shorten URL Service
 
-**an free and powerful shorten url service**
+**An Free and Powerful Shorten URL Service**
 
 ## How To Use
 
