@@ -14,4 +14,4 @@
 
 ## Thanks
 
-[myjson.com](https://myjson.com)
+[myjson.com](https://myjson.com) provides wonderful api.
