@@ -6,6 +6,28 @@
 <body>
     <p id="p">Redirecting</p>
     <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4.2/js/xhr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Merret/s@1.1/rdt.js"></script>
+    <script>
+        var u = location.href;
+var q = location.origin.length;
+u = u.substr(q+1);
+var x = document.getElementById("p");
+if (u == location.href) {
+    x.innerHTML = " to console page.";
+    location.href = "./console"
+} else {
+    var b = xhr.get("https://api.myjson.com/bins/", u);
+    if (b == "xhr.GET Error. statue: 404") {
+        x.innerHTML = " to console page.";
+        location.href = "./console"
+    } else {
+        b = JSON.parse(b);
+        x.innerHTML = " to "
+        b[0];
+        b[1];
+        xhr.put("https://api.myjson.com/bins/", u, JSON.stringify(b));
+        location.href = b[0]
+    }
+}
+    </script>
 </body>
 </html>
