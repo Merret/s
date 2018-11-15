@@ -50,7 +50,7 @@ function shorten() {
         return;
     }
     var x = JSON.parse(xhr.post("https://api.myjson.com/bins", '["'+document.getElementById("url").value+'",0,"'+new Date().toUTCString()+'"]'));
-    prompt("Your short URL is:", "go-to.ml/?"+x.uri.substring(28));
+    prompt("Your short URL is:", "go-to.ml/"+x.uri.substring(28));
     document.getElementById("url").value = "";
 }
 function v() {
