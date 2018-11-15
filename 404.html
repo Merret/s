@@ -15,7 +15,7 @@ if (u == location.href) {
     x.innerHTML = " to console page.";
     location.href = "./console"
 } else {
-    var b = xhr.get("https://api.myjson.com/bins/", u);
+    var b = xhr.get("https://api.myjson.com/bins/"+u);
     if (b == "xhr.GET Error. statue: 404") {
         x.innerHTML = " to console page.";
         location.href = "./console"
@@ -24,7 +24,7 @@ if (u == location.href) {
         x.innerHTML = " to "
         b[0];
         b[1];
-        xhr.put("https://api.myjson.com/bins/", u, JSON.stringify(b));
+        xhr.put("https://api.myjson.com/bins/"+u, JSON.stringify(b));
         location.href = b[0]
     }
 }
