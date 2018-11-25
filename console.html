@@ -31,7 +31,7 @@ a:visited {
 
 <div style="position: relative; top: 20%;">
 
-<h2>GO-TO.ML URL Shortener</h2>
+<h2>•.ML URL Shortener</h2>
 
 <input type="url" id="url" style="min-width:80%; max-width:90%; padding: 4px; border: 0; font-size: 24px; border-radius: 8px" placeholder="type URL here">
 
@@ -50,7 +50,7 @@ function shorten() {
         return;
     }
     var x = JSON.parse(xhr.post("https://api.myjson.com/bins", '["'+document.getElementById("url").value+'",0,"'+new Date().toUTCString()+'"]'));
-    prompt("Your short URL is:", "go-to.ml/"+x.uri.substring(28));
+    prompt("Your short URL is:", "•.ml/"+x.uri.substring(28));
     document.getElementById("url").value = "";
 }
 function v() {
