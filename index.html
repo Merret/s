@@ -4,7 +4,7 @@
 <meta property="og:image" content="link-500.png"/>
 </head>
 <body>
-    <p id="p">We are going to </p>
+    <p id="p">We are going</p>
     <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4.2/js/xhr.min.js"></script>
     <script>
 function toConsole() {document.write(xhr.get("console"));}
@@ -22,8 +22,7 @@ if (u == location.href) {
         location.href = "./console"
     } else {
         b = JSON.parse(b);
-        x.innerHTML = " to "
-        b[0];
+        x.innerHTML = " to " + b[0];
         b[1];
         xhr.put("https://api.myjson.com/bins/"
             u, JSON.stringify(b));
