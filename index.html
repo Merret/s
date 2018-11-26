@@ -7,26 +7,23 @@
     <p id="p">We are going</p>
     <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4.2/js/xhr.min.js"></script>
     <script>
-function toConsole() {document.write(xhr.get("console.txt"));}
 var u = location.href;
 u = u.substr(u.search("\\?") 1);
 var x = document.getElementById("p");
 if (u == location.href) {
     x.innerHTML = " to console page.";
-    toConsole();
+    document.write(xhr.get("console.txt"));
 } else {
-    var b = xhr.get("https://api.myjson.com/bins/"
-        u);
+    var b = xhr.get("https://api.myjson.com/bins/"+u);
     if (b == "xhr.GET Error. statue: 404") {
         x.innerHTML = " to console page.";
-        location.href = "./console"
+        document.write(xhr.get("console.txt"));
     } else {
         b = JSON.parse(b);
         x.innerHTML = " to " + b[0];
         b[1];
-        xhr.put("https://api.myjson.com/bins/"
-            u, JSON.stringify(b));
-        location.href = b[0]
+        xhr.put("https://api.myjson.com/bins/"+u, JSON.stringify(b));
+        location.href = b[0];
     }
 }
     </script>
