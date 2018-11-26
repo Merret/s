@@ -21,7 +21,7 @@ if (u.search("\\?") == -1) {
     } else {
         b = JSON.parse(b);
         x.innerHTML += " to " + b[0];
-        b[1];
+        b[1] += 1;
         xhr.put("https://api.myjson.com/bins/"+u, JSON.stringify(b));
         location.href = b[0];
     }
