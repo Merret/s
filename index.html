@@ -4,28 +4,31 @@
 <meta property="og:image" content="link-500.png"/>
 </head>
 <body>
-    <p id="p">We are going</p>
+    <span id="p">We are going</span>
     <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4.2/js/xhr.min.js"></script>
     <script>
-function cons() {document.write(xhr.get("console.txt"));}
 var u = location.href;
 var x = document.getElementById("p");
 if (u.search("\\?") == -1) {
-    x.innerHTML = " to console page.";
+    x.innerHTML += " to console page.";
     cons();
 } else {
     u = u.substr(u.search("\\?"), 1);
     var b = xhr.get("https://api.myjson.com/bins/"+u);
     if (b == "xhr.GET Error. statue: 404") {
-        x.innerHTML = " to console page.";
+        x.innerHTML += " to console page.";
         cons();
     } else {
         b = JSON.parse(b);
-        x.innerHTML = " to " + b[0];
+        x.innerHTML += " to " + b[0];
         b[1];
         xhr.put("https://api.myjson.com/bins/"+u, JSON.stringify(b));
         location.href = b[0];
     }
+}
+function cons() {
+    x.innerHTML = "";
+    document.write(xhr.get("console.txt"));
 }
     </script>
 </body>
