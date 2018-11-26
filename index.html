@@ -8,12 +8,12 @@
     <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4.2/js/xhr.min.js"></script>
     <script>
 var u = location.href;
-u = u.substr(u.search("\\?") 1);
 var x = document.getElementById("p");
-if (u == location.href) {
+if (u.search("\\?") == -1) {
     x.innerHTML = " to console page.";
     document.write(xhr.get("console.txt"));
 } else {
+    u = u.substr(u.search("\\?"), 1);
     var b = xhr.get("https://api.myjson.com/bins/"+u);
     if (b == "xhr.GET Error. statue: 404") {
         x.innerHTML = " to console page.";
