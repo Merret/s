@@ -4,7 +4,7 @@
 
 ## How To Use
 
-1. Go to [go-to.ml](https://go-to.ml/console).
+1. Go to [•.ml](https://•.ml/console).
 
 2. Paste long URL in the input field.
 
